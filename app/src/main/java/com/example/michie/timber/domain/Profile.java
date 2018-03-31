@@ -5,18 +5,13 @@ import com.google.gson.annotations.SerializedName;
 
 public class Profile {
 
-    private String name;
-    private String url;
-    private String location;
-    private int age;
-
     @SerializedName("name")
     @Expose
     private String name;
 
     @SerializedName("url")
     @Expose
-    private String imageUrl;
+    private String url;
 
     @SerializedName("age")
     @Expose
