@@ -8,7 +8,6 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.michie.timber.R;
-import com.example.michie.timber.domain.Profile;
 import com.mindorks.placeholderview.SwipePlaceHolderView;
 import com.mindorks.placeholderview.annotations.Layout;
 import com.mindorks.placeholderview.annotations.Resolve;
@@ -44,7 +43,7 @@ public class TinderCard {
     @Resolve
     private void onResolved(){
         Glide.with(mContext).load(mProfile.getUrl()).into(profileImageView);
-        nameAgeTxt.setText(mProfile.getName() + ", " + mProfile.getAge());
+        nameAgeTxt.setText(mProfile.getName() + ", " + mProfile.getLength());
         locationNameTxt.setText(mProfile.getLocation());
     }
 

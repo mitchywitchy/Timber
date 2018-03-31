@@ -13,16 +13,16 @@ public class Profile {
     @Expose
     private String url;
 
-    @SerializedName("age")
+    @SerializedName("length")
     @Expose
-    private Integer age;
+    private String length;
 
     @SerializedName("location")
     @Expose
     private String location;
 
-    public int getAge() {
-        return age;
+    public String getLength() {
+        return length;
     }
     public String getLocation() {
         return location;
@@ -33,8 +33,8 @@ public class Profile {
     public String getName() {
         return name;
     }
-    public void setAge(int age) {
-        this.age = age;
+    public void setLength(String length) {
+        this.length = length;
     }
     public void setLocation(String location) {
         this.location = location;
