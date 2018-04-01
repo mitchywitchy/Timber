@@ -1,7 +1,9 @@
 package com.example.michie.timber;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
@@ -12,15 +14,20 @@ import com.example.michie.timber.domain.TinderCard;
 import com.mindorks.placeholderview.SwipeDecor;
 import com.mindorks.placeholderview.SwipePlaceHolderView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     private SwipePlaceHolderView mSwipeView;
     private Context mContext;
+    private ArrayList<Profile> accepted;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        accepted = new ArrayList<>();
 
         mSwipeView = (SwipePlaceHolderView)findViewById(R.id.swipeView);
         mContext = getApplicationContext();
@@ -35,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         for(Profile profile : Utils.loadProfiles(this.getApplicationContext())){
-            mSwipeView.addView(new TinderCard(mContext, profile, mSwipeView));
+            mSwipeView.addView(new TinderCard(mContext, profile, mSwipeView, accepted));
         }
 
         findViewById(R.id.rejectBtn).setOnClickListener(new View.OnClickListener() {
@@ -55,7 +62,9 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.menuBtn).setOnClickListener(new View.OnClickListener() {
                 @Override
             public void onClick (View v){
-
+                    Intent displayIntent = new Intent(mContext, DisplayActivity.class);
+                    displayIntent.putParcelableArrayListExtra("accepted", accepted);
+                    startActivity(displayIntent);
             }
         });
     }
