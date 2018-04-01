@@ -51,5 +51,12 @@ public class MainActivity extends AppCompatActivity {
                 mSwipeView.doSwipe(true);
             }
         });
+        //what happens when you click the buttons, Menu button
+        findViewById(R.id.menuBtn).setOnClickListener(new View.OnClickListener() {
+                @Override
+            public void onClick (View v){
+
+            }
+        });
     }
 }

@@ -24,6 +24,12 @@
             android:layout_height="50dp"
             android:layout_marginLeft="30dp"
             android:background="@drawable/capture"/>
+        <ImageButton
+            android:id="@+id/menuBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/menu"/>
     </LinearLayout>
     <com.mindorks.placeholderview.SwipePlaceHolderView
         android:id="@+id/swipeView"
