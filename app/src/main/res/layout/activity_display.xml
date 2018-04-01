@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DisplayActivity">
+    tools:context=".DisplayActivity"
+    android:background="@drawable/woodbackground2">
     <com.mindorks.placeholderview.PlaceHolderView
         android:id="@+id/list"
         android:layout_width="match_parent"
